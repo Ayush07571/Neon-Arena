@@ -1,0 +1,93 @@
+@tailwind base;
+@layer base {
+  --color-neon-cyan: #00ffff;
+  --color-neon-magenta: #ff00ff;
+  --color-neon-yellow: #ffff00;
+  --color-neon-green: #00ff88;
+  --color-neon-blue: #0088ff;
+  
+  --color-dark-bg: #000000;
+  --color-dark-surface: #111111;
+  --color-dark-border: #1a1a1a;
+}
+
+@layer components {
+  --glassmorphism-bg: rgba(255, 255, 255, 0.1);
+  --glassmorphism-border: rgba(255, 255, 255, 0.2);
+  --glassmorphism-blur: blur(12px);
+  --neon-glow-cyan: 0 0 30px rgba(0, 255, 255, 0.4);
+  --neon-glow-magenta: 0 0 30px rgba(255, 0, 255, 0.4);
+  --neon-glow-yellow: 0 0 30px rgba(255, 255, 0, 0.4);
+  --neon-glow-green: 0 0 30px rgba(0, 255, 255, 0.4);
+  --neon-glow-blue: 0 0 30px rgba(0, 136, 255, 0.4);
+}
+
+@layer utilities {
+  --tilt-3d: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  --neon-text-shadow: 0 0 20px var(--glow-color);
+  --glassmorphism: var(--glassmorphism-bg) var(--glassmorphism-border) var(--glassmorphism-blur);
+}
+
+/* Custom CSS Variables for Dynamic Values */
+:root {
+  --glow-color: var(--glow-color, #00ffff);
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Cyberpunk base theme */
+body {
+  background-color: var(--color-dark-bg);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Glassmorphism utility classes */
+.glassmorphism {
+  background: var(--glassmorphism);
+  border: 1px solid var(--glassmorphism-border);
+  backdrop-filter: var(--glassmorphism-blur);
+  border-radius: 12px;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: var(--neon-text-shadow);
+  transition: all 0.3s ease-out;
+}
+
+.neon-glow:hover {
+  box-shadow: 0 0 40px var(--glow-color);
+}
+
+/* 3D tilt effects */
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  :root {
+    --glassmorphism-blur: blur(8px);
+  }
+}
+
+/* Animation performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}

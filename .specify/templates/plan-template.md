@@ -17,27 +17,21 @@
   the iteration process.
 -->
 
-**Language/Version**: TypeScript/Next.js 16.1.6  
-**Primary Dependencies**: React 19.2.3, TailwindCSS 4, Next.js 16.1.6  
+**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
+**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
 **Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., Jest, Playwright, Cypress or NEEDS CLARIFICATION]  
-**Target Platform**: Web (desktop, tablet, mobile)  
-**Project Type**: web-application  
-**Performance Goals**: 60fps animations, <200ms page load, smooth scrolling  
-**Constraints**: Neon color accessibility, WCAG 2.1 AA compliance, responsive design  
-**Scale/Scope**: Gaming hub landing page with esports features
+**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
+**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
+**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
+**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
+**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
+**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-- **Cyberpunk Design Philosophy**: Dark theme with neon accents and glassmorphism implemented
-- **Immersive User Experience**: Smooth scrolling, parallax effects, and interactive feedback planned
-- **Performance Excellence**: 60fps animations and lazy-loading strategy defined
-- **Modern Technology Standards**: Component-based React architecture with TypeScript
-- **Accessibility & Responsiveness**: WCAG 2.1 AA compliance and responsive design approach
-- **Animation & Motion Guidelines**: CSS transforms and GPU acceleration strategy outlined
-- **Code Quality Standards**: Naming conventions, folder structure, and tooling defined
+[Gates determined based on constitution file]
 
 ## Project Structure
 
@@ -62,30 +56,43 @@ specs/[###-feature]/
 -->
 
 ```text
-# Option 2: Web application (Next.js structure)
-app/
-├── components/
-│   ├── ui/
-│   ├── features/
-│   └── layout/
-├── pages/ or app/ (depending on Next.js version)
-├── styles/
-├── lib/
-├── hooks/
-└── types/
-
-public/
-├── images/
-├── assets/
-└── icons/
+# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
+src/
+├── models/
+├── services/
+├── cli/
+└── lib/
 
 tests/
-├── __mocks__/
-├── components/
-└── e2e/
+├── contract/
+├── integration/
+└── unit/
+
+# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
+backend/
+├── src/
+│   ├── models/
+│   ├── services/
+│   └── api/
+└── tests/
+
+frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   └── services/
+└── tests/
+
+# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
+api/
+└── [same as backend above]
+
+ios/ or android/
+└── [platform-specific structure: feature modules, UI flows, platform tests]
 ```
 
-**Structure Decision**: Next.js app directory structure with component-based organization for the gaming hub
+**Structure Decision**: [Document the selected structure and reference the real
+directories captured above]
 
 ## Complexity Tracking
 

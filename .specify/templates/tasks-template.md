@@ -20,13 +20,10 @@ description: "Task list template for feature implementation"
 
 ## Path Conventions
 
-- **Next.js web app**: `app/`, `components/`, `public/`, `tests/` at repository root
-- **Components**: `components/ui/`, `components/features/`, `components/layout/`
-- **Pages**: `app/` (Next.js 13+ app router)
-- **Styles**: `styles/` or `app/globals.css`
-- **Utilities**: `lib/`, `hooks/`, `types/`
-- **Tests**: `tests/components/`, `tests/e2e/`
-- **Assets**: `public/images/`, `public/assets/`
+- **Single project**: `src/`, `tests/` at repository root
+- **Web app**: `backend/src/`, `frontend/src/`
+- **Mobile**: `api/src/`, `ios/src/` or `android/src/`
+- Paths shown below assume single project - adjust based on plan.md structure
 
 <!-- 
   ============================================================================
@@ -51,10 +48,9 @@ description: "Task list template for feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create Next.js project structure with app router
-- [ ] T002 Initialize TypeScript configuration with strict mode
-- [ ] T003 [P] Configure TailwindCSS with neon theme and glassmorphism utilities
-- [ ] T004 [P] Setup ESLint and Prettier for code quality standards
+- [ ] T001 Create project structure per implementation plan
+- [ ] T002 Initialize [language] project with [framework] dependencies
+- [ ] T003 [P] Configure linting and formatting tools
 
 ---
 
@@ -66,12 +62,12 @@ description: "Task list template for feature implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T005 Setup dark theme with neon color palette in CSS variables
-- [ ] T006 [P] Implement glassmorphism component utilities and base styles
-- [ ] T007 [P] Create responsive layout components (Header, Footer, Main)
-- [ ] T008 Setup performance optimization (lazy loading, image optimization)
-- [ ] T009 Configure accessibility testing and WCAG 2.1 AA compliance checks
-- [ ] T010 Setup animation utilities with GPU acceleration support
+- [ ] T004 Setup database schema and migrations framework
+- [ ] T005 [P] Implement authentication/authorization framework
+- [ ] T006 [P] Setup API routing and middleware structure
+- [ ] T007 Create base models/entities that all stories depend on
+- [ ] T008 Configure error handling and logging infrastructure
+- [ ] T009 Setup environment configuration management
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -87,17 +83,17 @@ Examples of foundational tasks (adjust based on your project):
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T010 [P] [US1] Component test for [Component] in tests/components/[component].test.tsx
-- [ ] T011 [P] [US1] E2E test for [user journey] in tests/e2e/[journey].spec.ts
+- [ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
+- [ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Create [Component] in components/ui/[component].tsx
-- [ ] T013 [P] [US1] Create [FeatureComponent] in components/features/[feature]/[component].tsx
-- [ ] T014 [US1] Implement [hook] in hooks/[hook].ts (depends on T012, T013)
-- [ ] T015 [US1] Implement [page] in app/[route]/page.tsx
-- [ ] T016 [US1] Add validation and error handling with accessibility
-- [ ] T017 [US1] Add animations and hover effects following motion guidelines
+- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
+- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py
+- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)
+- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T016 [US1] Add validation and error handling
+- [ ] T017 [US1] Add logging for user story 1 operations
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
