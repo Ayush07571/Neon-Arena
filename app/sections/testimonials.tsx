@@ -2,33 +2,51 @@
 
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import { TestimonialCard } from '../components/ui/cards/TestimonialCard';
 import { useSectionTransitions } from '../hooks/useSectionTransitions';
+import { TypewriterTestimonials } from '../components/ui/typewriter-testimonial';
 
 const TESTIMONIALS_DATA = [
   {
-    id: 't1',
-    author: 'Alex "Void" Chen',
-    role: 'Pro Gamer // Tier 1',
-    content: 'Neon Arena changed how our squad operates. The unified dashboard and scrim tools are indispensable for competitive play.',
-    avatar: '👨‍🚀',
-    glowColor: '#00ffff'
+    image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1780&auto=format&fit=crop',
+    audio: '', // Optional: Add filename if you have /public/audio/ files
+    text: 'Neon Arena changed how our squad operates. The unified dashboard and scrim tools are indispensable for competitive play.',
+    name: 'Alex "Void" Chen',
+    jobtitle: 'Pro Gamer // Tier 1',
   },
   {
-    id: 't2',
-    author: 'Sarah Jenkins',
-    role: 'Tournament Director',
-    content: 'The reliability of the tournament infrastructure is unmatched. We saw a 40% increase in participant engagement since switching.',
-    avatar: '👩‍💻',
-    glowColor: '#ff00ff'
+    image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1780&auto=format&fit=crop',
+    audio: '',
+    text: 'The reliability of the tournament infrastructure is unmatched. We saw a 40% increase in participant engagement since switching.',
+    name: 'Sarah Jenkins',
+    jobtitle: 'Tournament Director',
   },
   {
-    id: 't3',
-    author: 'Marcus Wright',
-    role: 'Community Lead',
-    content: 'Building a toxic-free gaming environment was our priority. Neon Arena’s reputation system made it possible.',
-    avatar: '🧔',
-    glowColor: '#ffff00'
+    image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop',
+    audio: '',
+    text: 'Building a toxic-free gaming environment was our priority. Neon Arena’s reputation system made it possible.',
+    name: 'Marcus Wright',
+    jobtitle: 'Community Lead',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=1780&auto=format&fit=crop',
+    audio: '',
+    text: 'I was skeptical at first, but this product delivered beyond my wildest dreams. It is robust, reliable, and has become essential.',
+    name: 'Emily White',
+    jobtitle: 'Project Lead',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1507003211169-0a6dd7228f2d?q=80&w=1780&auto=format&fit=crop',
+    audio: '',
+    text: 'This tool is a game-changer for data analysis. The visualisations are clear, and the insights gained are invaluable.',
+    name: 'David Lee',
+    jobtitle: 'Data Scientist',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1780&auto=format&fit=crop',
+    audio: '',
+    text: 'I appreciate the continuous updates and improvements. The team behind this product clearly listens to user feedback.',
+    name: 'Sarah Chen',
+    jobtitle: 'Operations Manager',
   }
 ];
 
@@ -40,7 +58,7 @@ export const TestimonialsSection = () => {
     <section 
       id="testimonials"
       ref={sectionRef}
-      className="min-h-screen relative flex items-center justify-center py-24 bg-black"
+      className="min-h-screen relative flex items-center justify-center py-24 bg-black overflow-hidden"
     >
       <motion.div 
         style={{ opacity, scale, y }}
@@ -50,7 +68,7 @@ export const TestimonialsSection = () => {
       </motion.div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,22 +78,12 @@ export const TestimonialsSection = () => {
             Trusted by the Best
           </motion.h2>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto">
-             Real stories from the pioneers of the Neon Arena ecosystem.
+             Hover over the operatives to decrypt their transmissions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TESTIMONIALS_DATA.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <TestimonialCard {...testimonial} />
-            </motion.div>
-          ))}
+        <div className="max-w-5xl mx-auto">
+          <TypewriterTestimonials testimonials={TESTIMONIALS_DATA} />
         </div>
       </div>
     </section>

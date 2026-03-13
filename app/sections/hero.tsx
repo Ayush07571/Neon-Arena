@@ -9,6 +9,7 @@ import { CyberpunkBackground } from '../components/features/hero/CyberpunkBackgr
 import { NeonLogo } from '../components/features/hero/NeonLogo';
 import { SplineScene } from "@/components/ui/splite";
 import { Spotlight } from "@/components/ui/spotlight";
+import { renderCanvas } from '../components/ui/canvas';
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,6 +17,7 @@ export const HeroSection = () => {
 
   useEffect(() => {
     setIsVisible(true);
+    renderCanvas();
   }, []);
 
   const { ref: heroRef, tilt } = useTiltEffect({
@@ -47,6 +49,11 @@ export const HeroSection = () => {
         glowColor="#00ffff"
         mouseX={mousePosition.x}
         mouseY={mousePosition.y}
+      />
+
+      <canvas
+        id="canvas"
+        className="pointer-events-none absolute inset-0 z-50 w-full h-full"
       />
 
       <div className="container mx-auto px-6 relative z-20">
