@@ -1,9 +1,8 @@
 # 🎮 Neon Arena - Cyberpunk Gaming Hub
 
 <div align="center">
-  <img src="./public/hero-preview.png" alt="Neon Arena Preview" width="800">
   
-  **[Live Demo](https://neon-arena-seven.vercel.app/)** • **[View Demo](https://neon-arena-seven.vercel.app/)**
+  **[View Demo](https://neon-arena-seven.vercel.app/)**
   
   ![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?style=for-the-badge&logo=next.js)
   ![React](https://img.shields.io/badge/React-19.2.3-blue?style=for-the-badge&logo=react)
